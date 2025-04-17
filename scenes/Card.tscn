@@ -6,6 +6,7 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tgmmg"]
 
 [node name="Card" type="Control"]
+clip_contents = true
 custom_minimum_size = Vector2(160, 224)
 layout_mode = 3
 anchors_preset = 0

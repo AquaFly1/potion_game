@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc62bln7m2h1o"]
+[gd_scene load_steps=3 format=3 uid="uid://cc62bln7m2h1o"]
 
 [ext_resource type="PackedScene" uid="uid://duroy6ns10vjv" path="res://scenes/Card.tscn" id="1_ffssg"]
+[ext_resource type="Texture2D" uid="uid://50l0nt8hat1g" path="res://sprites/HeartStone.aseprite" id="2_0scac"]
 
 [node name="Heartstone" instance=ExtResource("1_ffssg")]
 
 [node name="card" parent="button" index="0"]
-texture = null
+texture = ExtResource("2_0scac")

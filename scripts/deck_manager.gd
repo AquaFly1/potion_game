@@ -3,7 +3,7 @@ extends Control
 @onready var hand_ui: HBoxContainer = $hand_ui
 @onready var deck_count: TextEdit = $deck_count
 
-@export var hand_size: int = 3
+@export var hand_size: int = 5
 @export var full_deck: Array[PackedScene] = []
 @onready var cards_in_hand: Label = $cards_in_hand
 
@@ -22,7 +22,7 @@ func _ready():
 		]
 		deck = full_deck.duplicate()
 		shuffle_deck()
-		draw_cards(3)
+		draw_cards(hand_size)
 
 func draw_cards(count: int):
 	for i in range(count):

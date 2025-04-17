@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_gdl0q")
 
 [node name="hand_ui" type="HBoxContainer" parent="."]
+clip_contents = true
 layout_mode = 0
 offset_left = 172.0
 offset_top = 336.0
