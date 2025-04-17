@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0wpewqudv4h1"]
+
+[ext_resource type="PackedScene" uid="uid://duroy6ns10vjv" path="res://scenes/Card.tscn" id="1_ggk15"]
+[ext_resource type="Resource" uid="uid://dyl4fly0pdfur" path="res://scenes/ingredients/SparkRock.tres" id="2_cwrfc"]
+
+[node name="Firecap" instance=ExtResource("1_ggk15")]
+ingredient_data = ExtResource("2_cwrfc")
+
+[node name="card" parent="button" index="0"]
+texture = null
