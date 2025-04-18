@@ -23,22 +23,24 @@ func draw_cards(count: int):
 	for i in range(count):
 		if deck.size() > 0:
 			if hand.size() < hand_size:
-				draw_card()
+				await draw_card()
 		else:
 			deck = Ingredients.full_deck.duplicate(true)
 			shuffle_deck()
-			draw_card()
+			await draw_card()
 
 func draw_card() -> void:
 	var ingredient: Ingredient = deck.pop_back()
-	print(ingredient)
 	var card_instance: CardBase = card_scene.instantiate()
+	
 	card_instance.card_selected.connect(_on_card_selected)
 	hand.append(card_instance)
 	hand_ui.add_child(card_instance)
 	current_card = null
 	card_instance.load_card(ingredient)
-	card_instance.draw_card()
+	
+	await card_instance.draw_card()
+	return
 
 func shuffle_deck():
 	deck.shuffle()

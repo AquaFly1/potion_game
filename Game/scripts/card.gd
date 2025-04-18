@@ -6,7 +6,9 @@ class_name CardBase
 @onready var card: CardBase = $"."
 @onready var flip_animations: AnimationPlayer = $flip_animations
 
-@export var ingredient_data: Ingredient
+var ingredient_data: Ingredient
+
+const DRAWING_TIME: float = 0.15
 
 signal card_selected(card)
 
@@ -16,14 +18,16 @@ func load_card(card: Ingredient) -> void:
 	ingredient_data = card
 	card_selected.emit(self)
 	card_spr.texture = ingredient_data.card_sprite
+	
 	is_face_down = true
 	set_to_face_down()
-	
-	draw_card()
 
 func draw_card():
 	print("Drawing ", ingredient_data.name, "...")
 	set_to_face_up()
+	
+	await get_tree().create_timer(DRAWING_TIME).timeout
+	return
 
 func play_card():
 	pass

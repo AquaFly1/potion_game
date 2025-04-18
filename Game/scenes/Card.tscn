@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://duroy6ns10vjv"]
+[gd_scene load_steps=8 format=3 uid="uid://duroy6ns10vjv"]
 
 [ext_resource type="Script" uid="uid://ctrj47qqhvsx3" path="res://scripts/card.gd" id="1_qf083"]
-[ext_resource type="Resource" uid="uid://dasdfssh00ifb" path="res://scenes/ingredients/Heartstone.tres" id="2_qf083"]
 [ext_resource type="Texture2D" uid="uid://50l0nt8hat1g" path="res://sprites/HeartStone.aseprite" id="3_4dx8l"]
 [ext_resource type="Texture2D" uid="uid://k3e28jf8aa8k" path="res://sprites/back.aseprite" id="4_qf083"]
 
@@ -246,7 +245,6 @@ offset_right = 160.0
 offset_bottom = 224.0
 flat = true
 script = ExtResource("1_qf083")
-ingredient_data = ExtResource("2_qf083")
 
 [node name="card" type="TextureRect" parent="."]
 visible = false
