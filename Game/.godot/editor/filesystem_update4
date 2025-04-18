@@ -1,0 +1,5 @@
+res://scenes/deck_manager.tscn
+res://scenes/Card.tscn
+res://scenes/SparkRock.tscn
+res://scenes/heartstone.tscn
+res://scripts/deck_manager.gd
