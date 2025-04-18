@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://1tnlimgpil8r"]
+[gd_scene load_steps=4 format=3 uid="uid://1tnlimgpil8r"]
 
 [ext_resource type="Script" uid="uid://bucxfb5ejg87b" path="res://scripts/deck_manager.gd" id="1_gdl0q"]
+[ext_resource type="Script" uid="uid://brjolm3le1hkp" path="res://scenes/hand_manager.gd" id="2_gdl0q"]
 
 [sub_resource type="Curve2D" id="Curve2D_dorsf"]
 _data = {
@@ -24,6 +25,7 @@ offset_left = 172.0
 offset_top = 336.0
 offset_right = 960.0
 offset_bottom = 559.0
+script = ExtResource("2_gdl0q")
 
 [node name="Path2D" type="Path2D" parent="hand_ui"]
 position = Vector2(0, 8)

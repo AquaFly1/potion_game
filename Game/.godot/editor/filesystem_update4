@@ -8,3 +8,4 @@ res://scenes/Global/cards.tscn
 res://scripts/card_inventory.gd
 res://scenes/ingredients/Heartstone.tres
 res://scenes/ingredients/SparkRock.tres
+res://scenes/hand_manager.gd

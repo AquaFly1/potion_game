@@ -1,6 +1,6 @@
 extends Control
 
-@onready var hand_ui: HBoxContainer = $hand_ui
+@onready var hand_ui: HandManager = $hand_ui
 @onready var deck_count: TextEdit = $deck_count
 
 @export var hand_size: int = 5
@@ -35,7 +35,7 @@ func draw_card() -> void:
 	
 	card_instance.card_selected.connect(_on_card_selected)
 	hand.append(card_instance)
-	hand_ui.add_child(card_instance)
+	hand_ui.add_card_to_hand(card_instance)
 	current_card = null
 	card_instance.load_card(ingredient)
 	
