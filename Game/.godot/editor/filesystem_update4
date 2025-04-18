@@ -1,5 +1,8 @@
-res://scenes/deck_manager.tscn
 res://scenes/Card.tscn
+res://scripts/ingredients.gd
+res://scripts/card.gd
+res://scripts/deck_manager.gd
+res://scripts/heart.gd
+res://scenes/deck_manager.tscn
 res://scenes/SparkRock.tscn
 res://scenes/heartstone.tscn
-res://scripts/deck_manager.gd
