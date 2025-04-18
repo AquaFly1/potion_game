@@ -1,11 +1,4 @@
-res://scenes/Card.tscn
 res://scenes/deck_manager.tscn
-res://scenes/SparkRock.tscn
-res://scenes/heartstone.tscn
-res://scripts/card.gd
-res://scripts/deck_manager.gd
+res://scenes/Card.tscn
 res://scenes/Global/cards.tscn
-res://scripts/card_inventory.gd
-res://scenes/ingredients/Heartstone.tres
-res://scenes/ingredients/SparkRock.tres
-res://scenes/hand_manager.gd
+res://scripts/deck_manager.gd

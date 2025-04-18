@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 		cards_in_hand.text = (str(hand.size())+ "/"+ str(hand_size))
 		deck_count.text = str(deck.size())
 	if Input.is_action_just_pressed("debug"):
-		print(current_card)
+		print(hand)
 
 func _on_discard_pressed() -> void:
 	if hand.size() > 0:
