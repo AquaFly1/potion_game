@@ -8,7 +8,7 @@
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("back_card:size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -56,7 +56,7 @@ tracks/3/keys = {
 }
 tracks/4/type = "value"
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/path = NodePath("card:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
@@ -104,7 +104,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(160, 224), Vector2(0, 224)]
+"values": [Vector2(120, 162), Vector2(0, 162)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -116,7 +116,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(80, 0)]
+"values": [Vector2(0, 0), Vector2(60, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -140,7 +140,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0.25, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 224), Vector2(160, 224)]
+"values": [Vector2(0, 162), Vector2(120, 162)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -152,7 +152,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0.25, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(80, 0), Vector2(0, 0)]
+"values": [Vector2(60, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_40ytf"]
@@ -168,7 +168,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(160, 224), Vector2(0, 224)]
+"values": [Vector2(120, 162), Vector2(0, 162)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -180,7 +180,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(80, 0)]
+"values": [Vector2(0, 0), Vector2(60, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -216,7 +216,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0.25, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 224), Vector2(160, 224)]
+"values": [Vector2(0, 162), Vector2(120, 162)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -228,7 +228,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0.25, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(80, 0), Vector2(0, 0)]
+"values": [Vector2(60, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5273u"]
@@ -240,10 +240,10 @@ _data = {
 
 [node name="Card" type="Button"]
 clip_contents = true
-custom_minimum_size = Vector2(160, 224)
-offset_right = 160.0
-offset_bottom = 224.0
-scale = Vector2(0.7, 0.7)
+custom_minimum_size = Vector2(120, 162)
+offset_right = 120.0
+offset_bottom = 162.0
+scale = Vector2(2, 2)
 flat = true
 script = ExtResource("1_qf083")
 
@@ -253,8 +253,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 80.0
-offset_right = -80.0
+offset_left = 60.0
+offset_right = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_4dx8l")
@@ -268,11 +268,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_qf083")
-expand_mode = 1
 
 [node name="flip_animations" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_5273u")
 }
+movie_quit_on_finish = true
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
