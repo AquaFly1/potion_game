@@ -14,7 +14,7 @@ func _ready() -> void:
 	card_spr.texture = ingredient_data.card_sprite
 
 func play_card():
-	pass
+	print('salam')
 
 
 
