@@ -1,0 +1,11 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4w5utkx3sj81"]
+
+[ext_resource type="Script" uid="uid://d36t3su2gmjis" path="res://scripts/card_inventory.gd" id="1_j6v1s"]
+[ext_resource type="Script" uid="uid://dg2lft3ij5dxa" path="res://scripts/ingredients.gd" id="2_3gr1u"]
+[ext_resource type="Resource" uid="uid://dasdfssh00ifb" path="res://scenes/ingredients/Heartstone.tres" id="3_maxrx"]
+[ext_resource type="Resource" uid="uid://dyl4fly0pdfur" path="res://scenes/ingredients/SparkRock.tres" id="4_qed8o"]
+
+[node name="Cards" type="Node"]
+script = ExtResource("1_j6v1s")
+ingredients = Array[ExtResource("2_3gr1u")]([ExtResource("3_maxrx"), ExtResource("4_qed8o")])
+full_deck = Array[ExtResource("2_3gr1u")]([ExtResource("3_maxrx"), ExtResource("3_maxrx"), ExtResource("3_maxrx"), ExtResource("3_maxrx"), ExtResource("3_maxrx"), ExtResource("4_qed8o"), ExtResource("4_qed8o"), ExtResource("4_qed8o"), ExtResource("4_qed8o"), ExtResource("4_qed8o")])

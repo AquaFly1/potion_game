@@ -4,23 +4,18 @@ extends Control
 @onready var deck_count: TextEdit = $deck_count
 
 @export var hand_size: int = 5
-@export var full_deck: Array[PackedScene] = []
 @onready var cards_in_hand: Label = $cards_in_hand
 
-var hand: Array[CardBase] = []
+var card_scene = preload("res://scenes/Card.tscn")
+
+var hand: Array[CardBase]
 var current_card: CardBase = null
-var SparkRock = preload("res://scenes/SparkRock.tscn")
-var heartstone = preload("res://scenes/heartstone.tscn")
-var deck: Array[PackedScene] = []
+var deck: Array[Ingredient]
 
 
 func _ready():
 	if hand_ui != null:
-		full_deck = [
-			SparkRock, SparkRock, SparkRock, SparkRock,
-			heartstone, heartstone, heartstone
-		]
-		deck = full_deck.duplicate()
+		deck = Ingredients.full_deck.duplicate(true)
 		shuffle_deck()
 		draw_cards(hand_size)
 
@@ -28,21 +23,23 @@ func draw_cards(count: int):
 	for i in range(count):
 		if deck.size() > 0:
 			if hand.size() < hand_size:
-				var card_scene = deck.pop_back()
-				var card_instance = card_scene.instantiate()
-				card_instance.connect("card_selected", Callable(self, "_on_card_selected"))
-				hand.append(card_instance)
-				hand_ui.add_child(card_instance)
-				current_card = null
+				draw_card()
 		else:
-			deck = full_deck.duplicate()
+			deck = Ingredients.full_deck.duplicate(true)
 			shuffle_deck()
-			var card_scene = deck.pop_back()
-			var card_instance = card_scene.instantiate()
-			card_instance.connect("card_selected", Callable(self, "_on_card_selected"))
-			hand.append(card_instance)
-			hand_ui.add_child(card_instance)
-			current_card = null
+			draw_card()
+
+func draw_card() -> void:
+	var ingredient: Ingredient = deck.pop_back()
+	print(ingredient)
+	var card_instance: CardBase = card_scene.instantiate()
+	card_instance.card_selected.connect(_on_card_selected)
+	hand.append(card_instance)
+	hand_ui.add_child(card_instance)
+	current_card = null
+	card_instance.load_card(ingredient)
+	card_instance.draw_card()
+
 func shuffle_deck():
 	deck.shuffle()
 

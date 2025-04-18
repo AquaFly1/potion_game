@@ -271,7 +271,7 @@ grow_vertical = 2
 texture = ExtResource("4_qf083")
 expand_mode = 1
 
-[node name="Animations" type="AnimationPlayer" parent="."]
+[node name="flip_animations" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_5273u")
 }
