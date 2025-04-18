@@ -19,6 +19,7 @@ layout_mode = 0
 offset_right = 20.0
 offset_bottom = 28.0
 scale = Vector2(8, 8)
+flat = true
 
 [node name="card" type="TextureRect" parent="button"]
 layout_mode = 0
