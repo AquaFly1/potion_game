@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://duroy6ns10vjv"]
+[gd_scene load_steps=12 format=3 uid="uid://duroy6ns10vjv"]
 
 [ext_resource type="Script" uid="uid://ctrj47qqhvsx3" path="res://scripts/card.gd" id="1_qf083"]
 [ext_resource type="Texture2D" uid="uid://50l0nt8hat1g" path="res://sprites/HeartStone.aseprite" id="3_4dx8l"]
@@ -238,6 +238,60 @@ _data = {
 &"flip_face_up": SubResource("Animation_40ytf")
 }
 
+[sub_resource type="Animation" id="Animation_4dx8l"]
+resource_name = "hover_card"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -50)]
+}
+
+[sub_resource type="Animation" id="Animation_qbjcq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dqwud"]
+resource_name = "unhover_card"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -50), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qf083"]
+_data = {
+&"RESET": SubResource("Animation_qbjcq"),
+&"hover_card": SubResource("Animation_4dx8l"),
+&"unhover_card": SubResource("Animation_dqwud")
+}
+
 [node name="Card" type="Button"]
 offset_right = 120.0
 offset_bottom = 162.0
@@ -275,6 +329,9 @@ libraries = {
 movie_quit_on_finish = true
 
 [node name="hover_animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qf083")
+}
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

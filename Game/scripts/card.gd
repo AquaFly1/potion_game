@@ -55,3 +55,9 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	pass # Replace with function body.
+
+func hover_animation() -> void:
+	hover_animations.play("hover_card")
+
+func unhover_animation() -> void:
+	hover_animations.play("unhover_card")

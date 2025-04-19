@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://1tnlimgpil8r"]
+
+[ext_resource type="Script" uid="uid://bucxfb5ejg87b" path="res://scripts/deck_manager.gd" id="1_gdl0q"]
+[ext_resource type="Script" uid="uid://brjolm3le1hkp" path="res://scripts/hand_manager.gd" id="2_gdl0q"]
+
+[sub_resource type="Curve2D" id="Curve2D_dorsf"]
+_data = {
+"points": PackedVector2Array(-609.704, 97.0318, 609.704, -97.0318, -224.781, 259.308, 0, 0, 0, 0, 997.286, 267.136)
+}
+point_count = 2
+
+[node name="Deck_manager" type="Control" groups=["DeckManager"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gdl0q")
+hand_size = 4
+
+[node name="hand_ui" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 177.0
+offset_top = 356.0
+offset_right = 965.0
+offset_bottom = 753.0
+script = ExtResource("2_gdl0q")
+
+[node name="Path2D" type="Path2D" parent="hand_ui"]
+position = Vector2(119, -7.49044)
+scale = Vector2(0.702908, 0.859078)
+curve = SubResource("Curve2D_dorsf")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 31.0
+offset_right = 1115.0
+offset_bottom = 245.0
+theme_override_font_sizes/font_size = 128
+text = "Discard Selected Card"
+
+[node name="deck_count" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 490.0
+offset_right = 1100.0
+offset_bottom = 619.0
+theme_override_font_sizes/font_size = 128
+text = "23"
+
+[node name="cards_in_hand" type="Label" parent="."]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 597.0
+offset_right = 679.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 64
+text = "3/3"
+horizontal_alignment = 1
+
+[node name="Play card" type="Button" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 53.0
+offset_right = 358.0
+offset_bottom = 261.0
+theme_override_font_sizes/font_size = 128
+text = "PLAY"
+
+[connection signal="pressed" from="Button" to="." method="_on_discard_pressed"]
+[connection signal="pressed" from="Play card" to="." method="_on_play_card_pressed"]
