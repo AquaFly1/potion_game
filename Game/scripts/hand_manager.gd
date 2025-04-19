@@ -3,10 +3,13 @@ extends Control
 
 @onready var arc: Path2D = $Path2D
 
+var hand = []
+
 func add_card_to_hand(card: CardBase) -> void:
 	var path_follow: PathFollow2D = PathFollow2D.new()
 	arc.add_child(path_follow)
 	path_follow.add_child(card)
+	hand.append(card)
 	path_follow.v_offset = -100
 	update_arc()
 

@@ -67,4 +67,4 @@ func _on_card_selected(card):
 	current_card = card
 
 func _on_play_card_pressed() -> void:
-	pass # Replace with function body.
+	pass

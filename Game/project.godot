@@ -21,7 +21,6 @@ aseprite_executable_path="C:/Program Files (x86)/Steam/steamapps/common/Aseprite
 
 [autoload]
 
-Deck="*res://scripts/deck_manager.gd"
 Ingredients="*res://scenes/Global/cards.tscn"
 
 [editor_plugins]
