@@ -1,5 +1,5 @@
-res://scenes/Global/cards.tscn
-res://scripts/hand_manager.gd
 res://scenes/deck_manager.tscn
 res://scenes/Card.tscn
+res://scenes/Global/cards.tscn
+res://scripts/card.gd
 res://scripts/deck_manager.gd

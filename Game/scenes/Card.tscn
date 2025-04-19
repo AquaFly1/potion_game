@@ -253,8 +253,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 60.0
-offset_right = -60.0
+offset_left = 80.0
+offset_right = -40.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_4dx8l")
@@ -275,4 +275,6 @@ libraries = {
 }
 movie_quit_on_finish = true
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

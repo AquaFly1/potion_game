@@ -1,3 +1,4 @@
+class_name DeckManager
 extends Control
 
 @onready var hand_ui: HandManager = $hand_ui
