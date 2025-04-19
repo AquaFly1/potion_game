@@ -3,3 +3,4 @@ res://scenes/Card.tscn
 res://scenes/Global/cards.tscn
 res://scripts/card.gd
 res://scripts/deck_manager.gd
+res://scripts/hand_manager.gd

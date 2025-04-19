@@ -27,6 +27,10 @@ Ingredients="*res://scenes/Global/cards.tscn"
 
 enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg")
 
+[global_group]
+
+DeckManager=""
+
 [gui]
 
 theme/custom_font="uid://yoo1fjm5guu6"

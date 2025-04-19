@@ -5,6 +5,7 @@ class_name CardBase
 @onready var card_spr: TextureRect = $card
 @onready var card: CardBase = $"."
 @onready var flip_animations: AnimationPlayer = $flip_animations
+@onready var hover_animations: AnimationPlayer = $hover_animations
 
 var ingredient_data: Ingredient
 
@@ -50,7 +51,7 @@ func set_to_face_up() -> void:
 	return
 
 func _on_mouse_entered() -> void:
-	pass # Replace with function body.
+	get_tree().get_first_node_in_group("DeckManager").hover_card(self)
 
 func _on_mouse_exited() -> void:
 	pass # Replace with function body.

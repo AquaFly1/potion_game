@@ -1,8 +1,8 @@
 class_name DeckManager
 extends Control
 
-@onready var hand_ui: HandManager = $hand_ui
 @onready var deck_count: TextEdit = $deck_count
+@onready var hand_ui: HandManager = $hand_ui
 
 @export var hand_size: int = 5
 @onready var cards_in_hand: Label = $cards_in_hand
@@ -12,6 +12,8 @@ var card_scene = preload("res://scenes/Card.tscn")
 var hand: Array[CardBase]
 var current_card: CardBase = null
 var deck: Array[Ingredient]
+
+var hovered_card: CardBase
 
 
 func _ready():
@@ -66,6 +68,10 @@ func _on_discard_pressed() -> void:
 
 func _on_card_selected(card):
 	current_card = card
+
+func hover_card(card: CardBase) -> void:
+	hovered_card = card
+	hand_ui.hover_card(card)
 
 func _on_play_card_pressed() -> void:
 	pass
